@@ -28,6 +28,8 @@ test:
   imports:
     - usb
     - usb.backend
+  requires:
+    - pip
 
 about:
   home: "https://pyusb.github.io/pyusb"
