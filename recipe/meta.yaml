@@ -35,5 +35,9 @@ about:
   dev_url: 
 
 extra:
+
+  anaconda-services:
+   ref: https://anaconda.zendesk.com/agent/tickets/32582
+
   recipe-maintainers:
     - ianaobi
