@@ -11,16 +11,20 @@ source:
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  noarch: python
+  script: "{{ PYTHON }} -m pip install --no-deps . -vv"
 
 requirements:
   host:
     - pip
     - python
+    - wheel
   run:
     - python
 
 test:
+  commands:
+    - pip check
   imports:
     - usb
     - usb.backend
@@ -29,15 +33,17 @@ about:
   home: "https://pyusb.github.io/pyusb"
   license: BSD
   license_family: BSD
-  license_file: 
+  license_file:
+  description: |
+    PyUSB offers easy USB devices communication in Python. It should work without additional code in any environment with Python >=     2.4, ctypes and an pre-built usb backend library (currently, libusb 0.1.x, libusb 1.x, and OpenUSB). 
   summary: "Python USB access module"
   doc_url: 
-  dev_url: 
+  dev_url: https://github.com/pyusb/pyusb
 
 extra:
 
   anaconda-services:
-   ref: https://anaconda.zendesk.com/agent/tickets/32582
+   ref: https://anaconda.zendesk.com/agent/tickets/33492
 
   recipe-maintainers:
     - ianaobi
